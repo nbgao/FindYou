@@ -18,7 +18,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private EditText phonenumET;
     private MyButton incomingBtn;
     private MyButton messageBtn;
-    private MyButton phoneBtn;
+    private MyButton tophoneBtn;
     private MyButton switchBtn;
 
     @Override
@@ -29,7 +29,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         phonenumET = (EditText)findViewById(R.id.et);
         incomingBtn = (MyButton)findViewById(R.id.incoming);
         messageBtn = (MyButton)findViewById(R.id.message);
-        phoneBtn = (MyButton)findViewById(R.id.phone);
+        tophoneBtn = (MyButton)findViewById(R.id.tophone);
         switchBtn = (MyButton)findViewById(R.id.myswitch);
 
     }
@@ -39,7 +39,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onResume();
         incomingBtn.setOnClickListener(this);
         messageBtn.setOnClickListener(this);
-        phoneBtn.setOnClickListener(this);
+        tophoneBtn.setOnClickListener(this);
         switchBtn.setOnClickListener(this);
     }
 
@@ -58,25 +58,25 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 }
                 break;
             case R.id.message:
-                if(MyConstants.isIncoming){
-                    MyConstants.isIncoming = false;
+                if(MyConstants.isMessage){
+                    MyConstants.isMessage = false;
                     messageBtn.setBackgroundResource(R.drawable.close_bg);
                     messageBtn.setText("短信监控");
                 }else{
-                    MyConstants.isIncoming = true;
+                    MyConstants.isMessage = true;
                     messageBtn.setBackgroundResource(R.drawable.open_bg);
                     messageBtn.setText("短信监控  已选择");
                 }
                 break;
-            case R.id.phone:
-                if(MyConstants.isIncoming){
-                    MyConstants.isIncoming = false;
-                    phoneBtn.setBackgroundResource(R.drawable.close_bg);
-                    phoneBtn.setText("去电监控");
+            case R.id.tophone:
+                if(MyConstants.isToPhone){
+                    MyConstants.isToPhone = false;
+                    tophoneBtn.setBackgroundResource(R.drawable.close_bg);
+                    tophoneBtn.setText("去电监控");
                 }else{
-                    MyConstants.isIncoming = true;
-                    phoneBtn.setBackgroundResource(R.drawable.open_bg);
-                    phoneBtn.setText("去电监控  已选择");
+                    MyConstants.isToPhone = true;
+                    tophoneBtn.setBackgroundResource(R.drawable.open_bg);
+                    tophoneBtn.setText("去电监控  已选择");
                 }
                 break;
             case R.id.myswitch:
@@ -88,7 +88,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         MyConstants.isOpen = false;
                         incomingBtn.setEnabled(true);
                         messageBtn.setEnabled(true);
-                        phoneBtn.setEnabled(true);
+                        tophoneBtn.setEnabled(true);
                         switchBtn.setText("开启监控");
 
                         Intent intent = new Intent(MainActivity.this,MyService.class);
@@ -97,7 +97,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         MyConstants.isOpen = true;
                         incomingBtn.setEnabled(false);
                         messageBtn.setEnabled(false);
-                        phoneBtn.setEnabled(false);
+                        tophoneBtn.setEnabled(false);
                         switchBtn.setText("关闭监控");
 
                         Intent intent = new Intent(MainActivity.this,MyService.class);

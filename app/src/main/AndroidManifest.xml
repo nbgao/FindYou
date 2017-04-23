@@ -2,9 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.findyou" >
 
+    <!-- 发短信权限 针对Android 6.0以下的机型自动添加权限，6.0以上的机型需自己手动开启 -->
     <uses-permission android:name="android.permission.SEND_SMS" />
 
+    <!-- 读取手机状态 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- 去电权限 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+
+    <!-- 接受短信权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
     <application
         android:allowBackup="true"
@@ -21,6 +29,10 @@
             </intent-filter>
         </activity>
 
+        <service android:name=".MyService">
+
+        </service>
+        
         <activity android:name=".FirstActivity">
 
         </activity>
@@ -29,9 +41,6 @@
 
         </activity>
 
-        <service android:name=".MyService">
-
-        </service>
     </application>
 
 

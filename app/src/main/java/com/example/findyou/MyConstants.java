@@ -14,4 +14,9 @@ public class MyConstants {
 
     //监控者的手机号
     public static String listenerPhoneNum;
+
+    public static boolean isMessage;
+
+    public static boolean isToPhone;
+
 }
