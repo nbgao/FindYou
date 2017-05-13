@@ -1,4 +1,4 @@
-package com.example.findyou;
+package com.example.findyou.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.findyou.R;
 
 /**
  * Created by Pengbing on 2017/4/23.

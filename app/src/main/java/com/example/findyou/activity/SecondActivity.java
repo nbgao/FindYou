@@ -1,8 +1,10 @@
-package com.example.findyou;
+package com.example.findyou.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+
+import com.example.findyou.R;
 
 /**
  * Created by Pengbing on 2017/4/23.

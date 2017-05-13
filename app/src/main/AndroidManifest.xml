@@ -30,14 +30,13 @@
         </activity>
 
         <service android:name=".MyService">
-
         </service>
         
-        <activity android:name=".FirstActivity">
+        <activity android:name=".activity.FirstActivity">
 
         </activity>
 
-        <activity android:name=".SecondActivity">
+        <activity android:name=".activity.SecondActivity">
 
         </activity>
 

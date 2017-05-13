@@ -92,7 +92,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         switchBtn.setText("开启监控");
 
                         Intent intent = new Intent(MainActivity.this,MyService.class);
-                        stopService(intent);
+                        stopService(intent);                                               //关闭监控服务
                     }else{                          //关闭状态 --> 开启状态
                         MyConstants.isOpen = true;
                         incomingBtn.setEnabled(false);
@@ -101,7 +101,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         switchBtn.setText("关闭监控");
 
                         Intent intent = new Intent(MainActivity.this,MyService.class);
-                        startService(intent);
+                        startService(intent);                                               //开启监控服务
 
                     }
                 }

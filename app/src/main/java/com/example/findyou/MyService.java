@@ -48,7 +48,6 @@ public class MyService extends Service {
                     }
                 }
             };
-
         }
 
         if(MyConstants.isMessage){
@@ -84,8 +83,8 @@ public class MyService extends Service {
     public void onDestroy(){
         super.onDestroy();
         Log.i("MyService","onDestroy");
-        if(MyConstants.isIncoming){
-            tm.listen(psl,PhoneStateListener.LISTEN_NONE);          //手机状态监听销毁
+        if(MyConstants.isIncoming){                 //手机状态监听销毁
+            tm.listen(psl,PhoneStateListener.LISTEN_NONE);
         }
         if(MyConstants.isMessage){
             unregisterReceiver(messageReceiver);
